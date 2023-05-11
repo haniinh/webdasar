@@ -5,7 +5,7 @@ $user = "root";
 $pass = "";
 $dbs = "mahasiswa";
 
-$conn = new mysql($host, $user, $pass, $dbs);
+$conn = new mysqli($host, $user, $pass, $dbs);
 
 if ($conn->connect_error) {
     die("No Connection to Database");
@@ -20,7 +20,7 @@ if ($conn->query($sql)) {
 ?>
 
 
-        <tabel border="1" cellpadding="10" cellsp
+        <table border="1" cellpadding="10" cellspacing="0">
         <?php
         while($row = $hasil->fetch_assoc()) {
         ?>
@@ -42,5 +42,5 @@ if ($conn->query($sql)) {
 
     }
 } else {
-    echo "perintah gagal dijalankan"
+    echo "perintah gagal dijalankan";
 }
